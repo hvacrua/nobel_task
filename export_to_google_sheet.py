@@ -49,12 +49,11 @@ Create_Service('client_secret_375823794938-voiuv7v2fd8af6gij7d8cmci5bekq6ga.apps
 
 def Export_Data_To_Sheets():
     response_date = service.spreadsheets().values().update(
-        spreadsheetId=gsheetId,
-        valueInputOption='RAW',
-        range=SAMPLE_RANGE_NAME,
-        body=dict(
-            majorDimension='ROWS',
-            values=df.T.reset_index().T.values.tolist())
+        spreadsheetId = SAMPLE_SPREADSHEET_ID_input,
+        valueInputOption = 'RAW',
+        range = SAMPLE_RANGE_NAME,
+        body=dict(majorDimension = 'ROWS',
+                  values = df.T.reset_index().T.values.tolist())
     ).execute()
     print('Sheet successfully Updated')
 
