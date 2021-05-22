@@ -11,10 +11,6 @@ for c in code_of_countries:
     countries.append(res.json()['name'])
     capitals.append(res.json()['capital'])
 
-#print(f"List of countries: {countries}\nList of capitals: {capitals}")
-
 dict_values = {"Country": countries, "Capital": capitals}
 
 df = pd.DataFrame(dict_values)
-
-#print(df)
